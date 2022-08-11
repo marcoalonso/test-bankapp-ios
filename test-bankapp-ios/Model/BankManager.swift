@@ -9,18 +9,22 @@ import Foundation
 
 protocol cuentaProtocol{
     func mostrarDatos(cuenta: [Cuenta])
+    func errorCuenta(cual: Error)
 }
 
 protocol saldosProtocol{
     func mostrarDatos(saldos: [Saldos])
+    func errorSaldos(cual: Error)
 }
 
 protocol tarjetasProtocol{
     func mostrarDatos(tarjetas: [Tarjetas])
+    func errorTarjetas(cual: Error)
 }
 
 protocol movimientosProtocol{
     func mostrarDatos(movimientos: [Movimientos])
+    func errorMovimientos(cual: String)
 }
 
 
@@ -36,6 +40,19 @@ struct BankManager {
             let session = URLSession(configuration: .default)
             
             let tarea = session.dataTask(with: url) { datos, respuesta, error in
+                
+                if error != nil {
+                    print("Error: ",error!.localizedDescription)
+                    switch error!.localizedDescription {
+                    case "A data connection is not currently allowed." :
+                        delegadoMovimientos?.errorMovimientos(cual: "Error de conexion")
+//                    case "A data connection is not currently allowed.2" :
+//                        delegadoMovimientos?.errorMovimientos(cual: "Error desconocido")
+                    default:
+                        delegadoMovimientos?.errorMovimientos(cual: "Error desconocido")
+                    }
+                }
+                
                 if let safeData = datos {
                     if let datosMovimientos = self.parseJSONMovimientos(data: safeData) {
                         delegadoMovimientos?.mostrarDatos(movimientos: datosMovimientos)
@@ -59,6 +76,10 @@ struct BankManager {
             
         } catch {
             print("Error al decodificar: \(error.localizedDescription)")
+            if error.localizedDescription == "The data couldn’t be read because it isn’t in the correct format."{
+                delegadoMovimientos?.errorMovimientos(cual: "Ocurrió un error en el Servidor al cargar movimientos")
+            }
+            //delegadoMovimientos?.errorMovimientos(cual: error.localizedDescription as! Error)
             return nil
         }
     }
@@ -68,6 +89,11 @@ struct BankManager {
             let session = URLSession(configuration: .default)
             
             let tarea = session.dataTask(with: url) { datos, respuesta, error in
+                
+                if error != nil {
+                  //  delegadoTarjetas?.errorTarjetas(cual: error!.localizedDescription as! Error)
+                }
+                
                 if let safeData = datos {
                     if let datosTarjetas = self.parseJSONTarjetas(data: safeData) {
                         delegadoTarjetas?.mostrarDatos(tarjetas: datosTarjetas)
@@ -91,6 +117,7 @@ struct BankManager {
             
         } catch {
             print("Error al decodificar: \(error.localizedDescription)")
+            //delegadoTarjetas?.errorTarjetas(cual: error.localizedDescription as! Error)
             return nil
         }
     }
@@ -100,6 +127,12 @@ struct BankManager {
             let session = URLSession(configuration: .default)
             
             let tarea = session.dataTask(with: url) { datos, respuesta, error in
+                
+                if error != nil {
+                    //delegadoSaldos?.errorSaldos(cual: error!.localizedDescription as? Error)
+                    print(error!.localizedDescription)
+                }
+                
                 if let safeData = datos {
                     if let datosSaldos = self.parseJSONSaldos(data: safeData) {
                         delegadoSaldos?.mostrarDatos(saldos: datosSaldos)
@@ -123,6 +156,7 @@ struct BankManager {
             
         } catch {
             print("Error al decodificar: \(error.localizedDescription)")
+            //delegadoSaldos?.errorSaldos(cual: error.localizedDescription as! Error)
             return nil
         }
     }
@@ -132,6 +166,11 @@ struct BankManager {
             let session = URLSession(configuration: .default)
             
             let tarea = session.dataTask(with: url) { datos, respuesta, error in
+                
+                if error != nil {
+                    //delegadoCuenta?.errorCuenta(cual: error!.localizedDescription as! Error)
+                }
+                
                 if let safeData = datos {
                     if let datosCuenta = self.parseJSONCuenta(data: safeData) {
                         delegadoCuenta?.mostrarDatos(cuenta: datosCuenta)
@@ -159,6 +198,7 @@ struct BankManager {
             
         } catch {
             print("Error al decodificar: \(error.localizedDescription)")
+            //delegadoCuenta?.errorCuenta(cual: error.localizedDescription as! Error)
             return nil
         }
     }

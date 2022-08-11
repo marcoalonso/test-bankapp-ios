@@ -21,7 +21,7 @@ class TarjetasViewController: UIViewController {
     
     // MARK: - Variables
     let subrayadoButton: [NSAttributedString.Key: Any] = [.underlineStyle: NSUnderlineStyle.single.rawValue]
-    var saldos: [Saldos] = [Saldos(cuenta: 1, saldoGeneral: 100, ingresos: 500, gastos: 300, id: 1)]
+    var saldos: [Saldos] = [Saldos(cuenta: 1, saldoGeneral: 0, ingresos: 0, gastos: 0, id: 1)]
     var tarjetas: [Tarjetas] = []
     var movimientos: [Movimientos] = []
     
@@ -84,6 +84,13 @@ class TarjetasViewController: UIViewController {
         EnviarDineroButton.setAttributedTitle(attributeStringEnviar, for: .normal)
         agregarTarjetaButton.setAttributedTitle(attributeStringAgregar, for: .normal)
     }
+    
+    func mostrarMsjAlerta(cualMSJ: String){
+        let alerta = UIAlertController(title: "ERROR", message: cualMSJ, preferredStyle: .alert)
+        let OK = UIAlertAction(title: "OK", style: .destructive, handler: nil)
+        alerta.addAction(OK)
+        present(alerta, animated: true)
+    }
 
 }
 
@@ -94,6 +101,12 @@ extension TarjetasViewController: movimientosProtocol {
             self.tablaMovimientos.reloadData()
         }
     }
+    
+    func errorMovimientos(cual: String){
+        DispatchQueue.main.async {
+            self.mostrarMsjAlerta(cualMSJ: cual)
+        }
+    }
 }
 
 extension TarjetasViewController: tarjetasProtocol {
@@ -101,6 +114,12 @@ extension TarjetasViewController: tarjetasProtocol {
         self.tarjetas = tarjetas
         DispatchQueue.main.async {
             self.tablaTarjetas.reloadData()
+        }
+    }
+    
+    func errorTarjetas(cual: Error){
+        DispatchQueue.main.async {
+            self.mostrarMsjAlerta(cualMSJ: cual.localizedDescription)
         }
     }
 }
@@ -113,6 +132,11 @@ extension TarjetasViewController: cuentaProtocol {
             self.ultimoInicioLabel.text = cuenta[0].ultimaSesion
         }
     }
+    func errorCuenta(cual: Error){
+        DispatchQueue.main.async {
+            self.mostrarMsjAlerta(cualMSJ: cual.localizedDescription)
+        }
+    }
 }
 
 extension TarjetasViewController: saldosProtocol {
@@ -123,6 +147,11 @@ extension TarjetasViewController: saldosProtocol {
         }
     }
     
+    func errorSaldos(cual: Error){
+        DispatchQueue.main.async {
+            self.mostrarMsjAlerta(cualMSJ: cual.localizedDescription)
+        }
+    }
     
 }
 

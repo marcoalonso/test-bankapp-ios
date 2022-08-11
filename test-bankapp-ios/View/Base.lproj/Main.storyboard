@@ -56,8 +56,8 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kIe-h7-vg5" userLabel="View - Name Date">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="51"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Marco Alonso" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9OM-Tq-F4y">
-                                                        <rect key="frame" x="21" y="16" width="100" height="19"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9OM-Tq-F4y">
+                                                        <rect key="frame" x="21" y="16" width="6.5" height="19"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="19" id="dvl-Di-pif"/>
                                                         </constraints>
@@ -65,8 +65,8 @@
                                                         <color key="textColor" red="0.95925635099999995" green="0.95925635099999995" blue="0.95925635099999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Último inicio 08/08/2022" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i1l-on-B38">
-                                                        <rect key="frame" x="197" y="16" width="180" height="19"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i1l-on-B38">
+                                                        <rect key="frame" x="370.5" y="16" width="6.5" height="19"/>
                                                         <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="16"/>
                                                         <color key="textColor" red="0.14652988310000001" green="0.74447077510000004" blue="0.57237905259999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
