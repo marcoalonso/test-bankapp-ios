@@ -8,7 +8,11 @@
 import UIKit
 
 class MovimientosCell: UITableViewCell {
-
+    
+    @IBOutlet weak var fechaMovimientoLabel: UILabel!
+    @IBOutlet weak var descripcionMovimientoLabel: UILabel!
+    @IBOutlet weak var cantidadMovimientoLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

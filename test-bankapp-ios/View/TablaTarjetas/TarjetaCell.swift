@@ -8,7 +8,15 @@
 import UIKit
 
 class TarjetaCell: UITableViewCell {
-
+    
+    @IBOutlet weak var tarjetaImageView: UIImageView!
+    @IBOutlet weak var activaInactivaLabel: UILabel!
+    
+    @IBOutlet weak var TitularLabel: UILabel!
+    @IBOutlet weak var nombreTitularTarjetaLabel: UILabel!
+    @IBOutlet weak var numTarjetaLabel: UILabel!
+    @IBOutlet weak var cantidadDineroLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
