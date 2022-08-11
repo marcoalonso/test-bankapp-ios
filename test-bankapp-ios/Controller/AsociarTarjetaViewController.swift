@@ -37,7 +37,13 @@ class AsociarTarjetaViewController: UIViewController {
     
     
     @IBAction func agregarButton(_ sender: UIButton) {
-        
+        formularioJSON = "{ Numero de tarjeta: \(numTarjeta.text ?? ""), Cuenta: \(cuenta.text ?? ""), Issure: \(issure.text ?? ""), Nombre de tarjeta: \(nombreTarjeta.text ?? ""), Marca: \(marca.text ?? ""), Estatus: \(estatus.text ?? ""), Saldo: \(saldo.text ?? ""), Tipo de cuenta: \(tipoCuenta.text ?? "") }"
+                
+                
+                let alerta = UIAlertController(title: "Datos Tarjeta", message: formularioJSON, preferredStyle: .alert)
+                let accionAceptar = UIAlertAction(title: "ACEPTAR", style: .default, handler: nil)
+                alerta.addAction(accionAceptar)
+                present(alerta, animated: true, completion: nil)
     }
     
     @IBAction func cancelarButton(_ sender: UIButton) {
