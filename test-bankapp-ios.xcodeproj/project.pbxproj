@@ -20,7 +20,10 @@
 		60D688FD28A47BF200C0E31D /* TarjetasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D688FC28A47BF200C0E31D /* TarjetasViewController.swift */; };
 		60D6890028A47CF100C0E31D /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D688FF28A47CF100C0E31D /* Extension+UIView.swift */; };
 		60D6895D28A492DD00C0E31D /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D6895C28A492DD00C0E31D /* CustomCell.swift */; };
-		60E8A1EC28A4B1B8006694B4 /* TarjetaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E8A1EB28A4B1B8006694B4 /* TarjetaCell.swift */; };
+		60E8A1F028A4BD27006694B4 /* TarjetaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E8A1EE28A4BD27006694B4 /* TarjetaCell.swift */; };
+		60E8A1F128A4BD27006694B4 /* TarjetaCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60E8A1EF28A4BD27006694B4 /* TarjetaCell.xib */; };
+		60E8A1F528A4BD43006694B4 /* MovimientosCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E8A1F328A4BD43006694B4 /* MovimientosCell.swift */; };
+		60E8A1F628A4BD43006694B4 /* MovimientosCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60E8A1F428A4BD43006694B4 /* MovimientosCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +42,10 @@
 		60D688FC28A47BF200C0E31D /* TarjetasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarjetasViewController.swift; sourceTree = "<group>"; };
 		60D688FF28A47CF100C0E31D /* Extension+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
 		60D6895C28A492DD00C0E31D /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
-		60E8A1EB28A4B1B8006694B4 /* TarjetaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarjetaCell.swift; sourceTree = "<group>"; };
+		60E8A1EE28A4BD27006694B4 /* TarjetaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarjetaCell.swift; sourceTree = "<group>"; };
+		60E8A1EF28A4BD27006694B4 /* TarjetaCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TarjetaCell.xib; sourceTree = "<group>"; };
+		60E8A1F328A4BD43006694B4 /* MovimientosCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovimientosCell.swift; sourceTree = "<group>"; };
+		60E8A1F428A4BD43006694B4 /* MovimientosCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovimientosCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,10 +112,11 @@
 		60D688F828A47B6F00C0E31D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				60E8A1F228A4BD2E006694B4 /* Movimientos */,
+				60E8A1ED28A4BD0B006694B4 /* TablaTarjetas */,
 				60D688E228A4752400C0E31D /* Main.storyboard */,
 				60D688E728A4752600C0E31D /* LaunchScreen.storyboard */,
 				60D6895C28A492DD00C0E31D /* CustomCell.swift */,
-				60E8A1EB28A4B1B8006694B4 /* TarjetaCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -129,6 +136,24 @@
 				60D688FF28A47CF100C0E31D /* Extension+UIView.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		60E8A1ED28A4BD0B006694B4 /* TablaTarjetas */ = {
+			isa = PBXGroup;
+			children = (
+				60E8A1EE28A4BD27006694B4 /* TarjetaCell.swift */,
+				60E8A1EF28A4BD27006694B4 /* TarjetaCell.xib */,
+			);
+			path = TablaTarjetas;
+			sourceTree = "<group>";
+		};
+		60E8A1F228A4BD2E006694B4 /* Movimientos */ = {
+			isa = PBXGroup;
+			children = (
+				60E8A1F328A4BD43006694B4 /* MovimientosCell.swift */,
+				60E8A1F428A4BD43006694B4 /* MovimientosCell.xib */,
+			);
+			path = Movimientos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,6 +217,8 @@
 				60D688E928A4752600C0E31D /* LaunchScreen.storyboard in Resources */,
 				60D688F628A47B5800C0E31D /* SFProText-Regular.ttf in Resources */,
 				60D688E628A4752600C0E31D /* Assets.xcassets in Resources */,
+				60E8A1F128A4BD27006694B4 /* TarjetaCell.xib in Resources */,
+				60E8A1F628A4BD43006694B4 /* MovimientosCell.xib in Resources */,
 				600C2E8028A49BDA0019ABF6 /* Roboto-Medium.ttf in Resources */,
 				60D688F428A47B2200C0E31D /* Roboto-Regular.ttf in Resources */,
 				60D688F328A47B2200C0E31D /* Roboto-Bold.ttf in Resources */,
@@ -208,7 +235,8 @@
 			files = (
 				60D688FD28A47BF200C0E31D /* TarjetasViewController.swift in Sources */,
 				60D688DD28A4752400C0E31D /* AppDelegate.swift in Sources */,
-				60E8A1EC28A4B1B8006694B4 /* TarjetaCell.swift in Sources */,
+				60E8A1F528A4BD43006694B4 /* MovimientosCell.swift in Sources */,
+				60E8A1F028A4BD27006694B4 /* TarjetaCell.swift in Sources */,
 				60D6890028A47CF100C0E31D /* Extension+UIView.swift in Sources */,
 				60D688DF28A4752400C0E31D /* SceneDelegate.swift in Sources */,
 				60D6895D28A492DD00C0E31D /* CustomCell.swift in Sources */,
