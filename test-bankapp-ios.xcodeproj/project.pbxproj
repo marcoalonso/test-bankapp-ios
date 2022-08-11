@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		600C2E8028A49BDA0019ABF6 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 600C2E7F28A49BDA0019ABF6 /* Roboto-Medium.ttf */; };
 		60D688DD28A4752400C0E31D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D688DC28A4752400C0E31D /* AppDelegate.swift */; };
 		60D688DF28A4752400C0E31D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D688DE28A4752400C0E31D /* SceneDelegate.swift */; };
 		60D688E428A4752400C0E31D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60D688E228A4752400C0E31D /* Main.storyboard */; };
@@ -18,11 +19,11 @@
 		60D688FB28A47BD100C0E31D /* AsociarTarjetaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D688FA28A47BD100C0E31D /* AsociarTarjetaViewController.swift */; };
 		60D688FD28A47BF200C0E31D /* TarjetasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D688FC28A47BF200C0E31D /* TarjetasViewController.swift */; };
 		60D6890028A47CF100C0E31D /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D688FF28A47CF100C0E31D /* Extension+UIView.swift */; };
-		60D6890228A47D2500C0E31D /* Extension+UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D6890128A47D2500C0E31D /* Extension+UILabel.swift */; };
 		60D6895D28A492DD00C0E31D /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D6895C28A492DD00C0E31D /* CustomCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		600C2E7F28A49BDA0019ABF6 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		60D688D928A4752400C0E31D /* test-bankapp-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "test-bankapp-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		60D688DC28A4752400C0E31D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60D688DE28A4752400C0E31D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -36,7 +37,6 @@
 		60D688FA28A47BD100C0E31D /* AsociarTarjetaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsociarTarjetaViewController.swift; sourceTree = "<group>"; };
 		60D688FC28A47BF200C0E31D /* TarjetasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarjetasViewController.swift; sourceTree = "<group>"; };
 		60D688FF28A47CF100C0E31D /* Extension+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
-		60D6890128A47D2500C0E31D /* Extension+UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UILabel.swift"; sourceTree = "<group>"; };
 		60D6895C28A492DD00C0E31D /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				60D688F528A47B5800C0E31D /* SFProText-Regular.ttf */,
+				600C2E7F28A49BDA0019ABF6 /* Roboto-Medium.ttf */,
 				60D688F128A47B2200C0E31D /* Roboto-Bold.ttf */,
 				60D688F228A47B2200C0E31D /* Roboto-Regular.ttf */,
 			);
@@ -123,7 +124,6 @@
 			isa = PBXGroup;
 			children = (
 				60D688FF28A47CF100C0E31D /* Extension+UIView.swift */,
-				60D6890128A47D2500C0E31D /* Extension+UILabel.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -189,6 +189,7 @@
 				60D688E928A4752600C0E31D /* LaunchScreen.storyboard in Resources */,
 				60D688F628A47B5800C0E31D /* SFProText-Regular.ttf in Resources */,
 				60D688E628A4752600C0E31D /* Assets.xcassets in Resources */,
+				600C2E8028A49BDA0019ABF6 /* Roboto-Medium.ttf in Resources */,
 				60D688F428A47B2200C0E31D /* Roboto-Regular.ttf in Resources */,
 				60D688F328A47B2200C0E31D /* Roboto-Bold.ttf in Resources */,
 				60D688E428A4752400C0E31D /* Main.storyboard in Resources */,
@@ -202,7 +203,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				60D6890228A47D2500C0E31D /* Extension+UILabel.swift in Sources */,
 				60D688FD28A47BF200C0E31D /* TarjetasViewController.swift in Sources */,
 				60D688DD28A4752400C0E31D /* AppDelegate.swift in Sources */,
 				60D6890028A47CF100C0E31D /* Extension+UIView.swift in Sources */,
