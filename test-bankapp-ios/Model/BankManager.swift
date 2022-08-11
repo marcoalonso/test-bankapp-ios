@@ -35,171 +35,77 @@ struct BankManager {
     var delegadoTarjetas: tarjetasProtocol?
     var delegadoMovimientos: movimientosProtocol?
     
-    func consultarInformacionMovimientos(endPoint: String){
-        if let url = URL(string: endPoint){
-            let session = URLSession(configuration: .default)
-            
-            let tarea = session.dataTask(with: url) { datos, respuesta, error in
-                
-                if error != nil {
-                    print("Error: ",error!.localizedDescription)
-                    switch error!.localizedDescription {
-                    case "A data connection is not currently allowed." :
-                        delegadoMovimientos?.errorMovimientos(cual: "Error de conexion")
-//                    case "A data connection is not currently allowed.2" :
-//                        delegadoMovimientos?.errorMovimientos(cual: "Error desconocido")
-                    default:
-                        delegadoMovimientos?.errorMovimientos(cual: "Error desconocido")
-                    }
-                }
-                
-                if let safeData = datos {
-                    if let datosMovimientos = self.parseJSONMovimientos(data: safeData) {
-                        delegadoMovimientos?.mostrarDatos(movimientos: datosMovimientos)
-                    }
-                }
-            }
-            tarea.resume()
-        }
-    }
-    
-    func parseJSONMovimientos(data: Data) -> [Movimientos]? {
+    func getMovimientos(endPoint: String) {
         var datosMovimientos: [Movimientos] = []
-        let decoder = JSONDecoder()
-        
-        do {
-            let datosDecodificados = try decoder.decode(MovimientosResponse.self, from: data)
-            print("Decodificacion Exitosa", datosDecodificados)
+        guard let url = URL(string: endPoint) else { return }
+        let task = URLSession.shared.dataTask(with: url) { data, _, error in
             
-            datosMovimientos = datosDecodificados.movimientos
-            return datosMovimientos
+            guard let data = data, error == nil else { return }
             
-        } catch {
-            print("Error al decodificar: \(error.localizedDescription)")
-            if error.localizedDescription == "The data couldn’t be read because it isn’t in the correct format."{
-                delegadoMovimientos?.errorMovimientos(cual: "Ocurrió un error en el Servidor al cargar movimientos")
+            do {
+                let movimientos = try JSONDecoder().decode(MovimientosResponse.self, from: data)
+                datosMovimientos = movimientos.movimientos
+                delegadoMovimientos?.mostrarDatos(movimientos: datosMovimientos)
+            } catch  {
+                print(error.localizedDescription)
             }
-            //delegadoMovimientos?.errorMovimientos(cual: error.localizedDescription as! Error)
-            return nil
         }
+        task.resume()
     }
     
-    func consultarInformacionTarjetas(endPoint: String){
-        if let url = URL(string: endPoint){
-            let session = URLSession(configuration: .default)
-            
-            let tarea = session.dataTask(with: url) { datos, respuesta, error in
-                
-                if error != nil {
-                  //  delegadoTarjetas?.errorTarjetas(cual: error!.localizedDescription as! Error)
-                }
-                
-                if let safeData = datos {
-                    if let datosTarjetas = self.parseJSONTarjetas(data: safeData) {
-                        delegadoTarjetas?.mostrarDatos(tarjetas: datosTarjetas)
-                    }
-                }
-            }
-            tarea.resume()
-        }
-    }
-    
-    func parseJSONTarjetas(data: Data) -> [Tarjetas]? {
+
+    func getTarjetas(endPoint: String) {
         var datosTarjetas: [Tarjetas] = []
-        let decoder = JSONDecoder()
-        
-        do {
-            let datosDecodificados = try decoder.decode(TarjetasResponse.self, from: data)
-            print("Decodificacion Exitosa", datosDecodificados)
+        guard let url = URL(string: endPoint) else { return }
+        let task = URLSession.shared.dataTask(with: url) { data, _, error in
             
-            datosTarjetas = datosDecodificados.tarjetas
-            return datosTarjetas
+            guard let data = data, error == nil else { return }
             
-        } catch {
-            print("Error al decodificar: \(error.localizedDescription)")
-            //delegadoTarjetas?.errorTarjetas(cual: error.localizedDescription as! Error)
-            return nil
-        }
-    }
-    
-    func consultarInformacionSaldos(endPoint: String){
-        if let url = URL(string: endPoint){
-            let session = URLSession(configuration: .default)
-            
-            let tarea = session.dataTask(with: url) { datos, respuesta, error in
-                
-                if error != nil {
-                    //delegadoSaldos?.errorSaldos(cual: error!.localizedDescription as? Error)
-                    print(error!.localizedDescription)
-                }
-                
-                if let safeData = datos {
-                    if let datosSaldos = self.parseJSONSaldos(data: safeData) {
-                        delegadoSaldos?.mostrarDatos(saldos: datosSaldos)
-                    }
-                }
+            do {
+                let tarjetas = try JSONDecoder().decode(TarjetasResponse.self, from: data)
+                datosTarjetas = tarjetas.tarjetas
+                delegadoTarjetas?.mostrarDatos(tarjetas: datosTarjetas)
+            } catch  {
+                print(error.localizedDescription)
             }
-            tarea.resume()
         }
+        task.resume()
     }
     
-    func parseJSONSaldos(data: Data) -> [Saldos]? {
+    
+    func getSaldos(endPoint: String) {
         var datosSaldos: [Saldos] = []
-        let decoder = JSONDecoder()
-        
-        do {
-            let datosDecodificados = try decoder.decode(SaldosResponse.self, from: data)
-            print("Decodificacion Exitosa", datosDecodificados)
+        guard let url = URL(string: endPoint) else { return }
+        let task = URLSession.shared.dataTask(with: url) { data, _, error in
             
-            datosSaldos = datosDecodificados.saldos
-            return datosSaldos
+            guard let data = data, error == nil else { return }
             
-        } catch {
-            print("Error al decodificar: \(error.localizedDescription)")
-            //delegadoSaldos?.errorSaldos(cual: error.localizedDescription as! Error)
-            return nil
-        }
-    }
-    
-    func consultarInformacionCuenta(endPoint: String){
-        if let url = URL(string: endPoint){
-            let session = URLSession(configuration: .default)
-            
-            let tarea = session.dataTask(with: url) { datos, respuesta, error in
-                
-                if error != nil {
-                    //delegadoCuenta?.errorCuenta(cual: error!.localizedDescription as! Error)
-                }
-                
-                if let safeData = datos {
-                    if let datosCuenta = self.parseJSONCuenta(data: safeData) {
-                        delegadoCuenta?.mostrarDatos(cuenta: datosCuenta)
-                    }
-                }
+            do {
+                let saldos = try JSONDecoder().decode(SaldosResponse.self, from: data)
+                datosSaldos = saldos.saldos
+                delegadoSaldos?.mostrarDatos(saldos: datosSaldos)
+            } catch  {
+                print(error.localizedDescription)
             }
-            tarea.resume()
         }
+        task.resume()
     }
     
-//    func parseJSON<T>(data: T) -> T {
-//
-//    }
-    
-    func parseJSONCuenta(data: Data) -> [Cuenta]? {
+    func getCuentaInfo(endPoint: String) {
         var datosCuenta: [Cuenta] = []
-        let decoder = JSONDecoder()
-        
-        do {
-            let datosDecodificados = try decoder.decode(CuentaResponse.self, from: data)
-            print("Decodificacion Exitosa", datosDecodificados)
+        guard let url = URL(string: endPoint) else { return }
+        let task = URLSession.shared.dataTask(with: url) { data, _, error in
             
-            datosCuenta = datosDecodificados.cuenta
-            return datosCuenta
+            guard let data = data, error == nil else { return }
             
-        } catch {
-            print("Error al decodificar: \(error.localizedDescription)")
-            //delegadoCuenta?.errorCuenta(cual: error.localizedDescription as! Error)
-            return nil
+            do {
+                let cuenta = try JSONDecoder().decode(CuentaResponse.self, from: data)
+                datosCuenta = cuenta.cuenta
+                delegadoCuenta?.mostrarDatos(cuenta: datosCuenta)
+            } catch  {
+                print(error.localizedDescription)
+            }
         }
+        task.resume()
     }
 }

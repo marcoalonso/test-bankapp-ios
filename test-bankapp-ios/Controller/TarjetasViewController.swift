@@ -40,16 +40,16 @@ class TarjetasViewController: UIViewController {
     
     func delegados(){
         bankManager.delegadoCuenta = self
-        bankManager.consultarInformacionCuenta(endPoint: Endpoints.urlCuenta)
+        bankManager.getCuentaInfo(endPoint: Endpoints.urlCuenta)
         
         bankManager.delegadoSaldos = self
-        bankManager.consultarInformacionSaldos(endPoint: Endpoints.urlSaldos)
+        bankManager.getSaldos(endPoint: Endpoints.urlSaldos)
         
         bankManager.delegadoTarjetas = self
-        bankManager.consultarInformacionTarjetas(endPoint: Endpoints.urlTarjetas)
+        bankManager.getTarjetas(endPoint: Endpoints.urlTarjetas)
         
         bankManager.delegadoMovimientos = self
-        bankManager.consultarInformacionMovimientos(endPoint: Endpoints.urlMovimientos)
+        bankManager.getMovimientos(endPoint: Endpoints.urlMovimientos)
         
         tablaTarjetas.delegate = self
         tablaTarjetas.dataSource = self
