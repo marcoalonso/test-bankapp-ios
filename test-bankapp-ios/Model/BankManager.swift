@@ -40,6 +40,10 @@ struct BankManager {
         guard let url = URL(string: endPoint) else { return }
         let task = URLSession.shared.dataTask(with: url) { data, _, error in
             
+            if error != nil {
+                delegadoMovimientos?.errorMovimientos(cual: "\(error!.localizedDescription)")
+            }
+            
             guard let data = data, error == nil else { return }
             
             do {

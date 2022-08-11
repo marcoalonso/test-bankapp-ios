@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		5262A9E015FCEBDA085D55DD /* Pods_test_bankapp_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3A5406C19EEA01F82C41C37 /* Pods_test_bankapp_ios.framework */; };
 		600C2E8028A49BDA0019ABF6 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 600C2E7F28A49BDA0019ABF6 /* Roboto-Medium.ttf */; };
-		60170A9128A4E36F000535DA /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60170A9028A4E36F000535DA /* Manager.swift */; };
 		602D33E128A4D89100A2A08E /* CuentaResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602D33E028A4D89100A2A08E /* CuentaResponse.swift */; };
 		602D33E328A4D8A000A2A08E /* SaldosResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602D33E228A4D8A000A2A08E /* SaldosResponse.swift */; };
 		602D33E528A4D8AC00A2A08E /* TarjetasResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602D33E428A4D8AC00A2A08E /* TarjetasResponse.swift */; };
@@ -38,7 +37,6 @@
 /* Begin PBXFileReference section */
 		2918B6FB21648ED99900A94F /* Pods-test-bankapp-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test-bankapp-ios.release.xcconfig"; path = "Target Support Files/Pods-test-bankapp-ios/Pods-test-bankapp-ios.release.xcconfig"; sourceTree = "<group>"; };
 		600C2E7F28A49BDA0019ABF6 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
-		60170A9028A4E36F000535DA /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
 		602D33E028A4D89100A2A08E /* CuentaResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuentaResponse.swift; sourceTree = "<group>"; };
 		602D33E228A4D8A000A2A08E /* SaldosResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaldosResponse.swift; sourceTree = "<group>"; };
 		602D33E428A4D8AC00A2A08E /* TarjetasResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarjetasResponse.swift; sourceTree = "<group>"; };
@@ -158,7 +156,6 @@
 			children = (
 				602D33DF28A4D79A00A2A08E /* Response */,
 				602D33E828A4DA4300A2A08E /* BankManager.swift */,
-				60170A9028A4E36F000535DA /* Manager.swift */,
 				6068988528A53D98002BDFDB /* Endpoints.swift */,
 			);
 			path = Model;
@@ -346,7 +343,6 @@
 				60D688DF28A4752400C0E31D /* SceneDelegate.swift in Sources */,
 				602D33E528A4D8AC00A2A08E /* TarjetasResponse.swift in Sources */,
 				602D33E728A4D8BB00A2A08E /* MovimientosResponse.swift in Sources */,
-				60170A9128A4E36F000535DA /* Manager.swift in Sources */,
 				60D6895D28A492DD00C0E31D /* CustomCell.swift in Sources */,
 				60D688FB28A47BD100C0E31D /* AsociarTarjetaViewController.swift in Sources */,
 			);
