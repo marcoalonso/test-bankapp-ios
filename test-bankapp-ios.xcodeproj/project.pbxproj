@@ -20,6 +20,7 @@
 		60D688FD28A47BF200C0E31D /* TarjetasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D688FC28A47BF200C0E31D /* TarjetasViewController.swift */; };
 		60D6890028A47CF100C0E31D /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D688FF28A47CF100C0E31D /* Extension+UIView.swift */; };
 		60D6895D28A492DD00C0E31D /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D6895C28A492DD00C0E31D /* CustomCell.swift */; };
+		60E8A1EC28A4B1B8006694B4 /* TarjetaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E8A1EB28A4B1B8006694B4 /* TarjetaCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		60D688FC28A47BF200C0E31D /* TarjetasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarjetasViewController.swift; sourceTree = "<group>"; };
 		60D688FF28A47CF100C0E31D /* Extension+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
 		60D6895C28A492DD00C0E31D /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		60E8A1EB28A4B1B8006694B4 /* TarjetaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarjetaCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				60D688E228A4752400C0E31D /* Main.storyboard */,
 				60D688E728A4752600C0E31D /* LaunchScreen.storyboard */,
 				60D6895C28A492DD00C0E31D /* CustomCell.swift */,
+				60E8A1EB28A4B1B8006694B4 /* TarjetaCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 			files = (
 				60D688FD28A47BF200C0E31D /* TarjetasViewController.swift in Sources */,
 				60D688DD28A4752400C0E31D /* AppDelegate.swift in Sources */,
+				60E8A1EC28A4B1B8006694B4 /* TarjetaCell.swift in Sources */,
 				60D6890028A47CF100C0E31D /* Extension+UIView.swift in Sources */,
 				60D688DF28A4752400C0E31D /* SceneDelegate.swift in Sources */,
 				60D6895D28A492DD00C0E31D /* CustomCell.swift in Sources */,
@@ -353,9 +357,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 345UR7Z9A7;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "test-bankapp-ios/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -370,6 +375,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rotadev.test-bankapp-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -381,9 +387,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 345UR7Z9A7;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "test-bankapp-ios/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -398,6 +405,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rotadev.test-bankapp-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
