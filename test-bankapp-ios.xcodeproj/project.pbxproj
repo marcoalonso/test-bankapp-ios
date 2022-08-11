@@ -7,7 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5262A9E015FCEBDA085D55DD /* Pods_test_bankapp_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3A5406C19EEA01F82C41C37 /* Pods_test_bankapp_ios.framework */; };
 		600C2E8028A49BDA0019ABF6 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 600C2E7F28A49BDA0019ABF6 /* Roboto-Medium.ttf */; };
+		60170A9128A4E36F000535DA /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60170A9028A4E36F000535DA /* Manager.swift */; };
+		602D33E128A4D89100A2A08E /* CuentaResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602D33E028A4D89100A2A08E /* CuentaResponse.swift */; };
+		602D33E328A4D8A000A2A08E /* SaldosResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602D33E228A4D8A000A2A08E /* SaldosResponse.swift */; };
+		602D33E528A4D8AC00A2A08E /* TarjetasResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602D33E428A4D8AC00A2A08E /* TarjetasResponse.swift */; };
+		602D33E728A4D8BB00A2A08E /* MovimientosResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602D33E628A4D8BB00A2A08E /* MovimientosResponse.swift */; };
+		602D33E928A4DA4300A2A08E /* BankManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602D33E828A4DA4300A2A08E /* BankManager.swift */; };
+		6068988628A53D98002BDFDB /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6068988528A53D98002BDFDB /* Endpoints.swift */; };
+		6068988828A54CB0002BDFDB /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6068988728A54CB0002BDFDB /* Double+Extension.swift */; };
 		60D688DD28A4752400C0E31D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D688DC28A4752400C0E31D /* AppDelegate.swift */; };
 		60D688DF28A4752400C0E31D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D688DE28A4752400C0E31D /* SceneDelegate.swift */; };
 		60D688E428A4752400C0E31D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60D688E228A4752400C0E31D /* Main.storyboard */; };
@@ -27,7 +36,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2918B6FB21648ED99900A94F /* Pods-test-bankapp-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test-bankapp-ios.release.xcconfig"; path = "Target Support Files/Pods-test-bankapp-ios/Pods-test-bankapp-ios.release.xcconfig"; sourceTree = "<group>"; };
 		600C2E7F28A49BDA0019ABF6 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		60170A9028A4E36F000535DA /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
+		602D33E028A4D89100A2A08E /* CuentaResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuentaResponse.swift; sourceTree = "<group>"; };
+		602D33E228A4D8A000A2A08E /* SaldosResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaldosResponse.swift; sourceTree = "<group>"; };
+		602D33E428A4D8AC00A2A08E /* TarjetasResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarjetasResponse.swift; sourceTree = "<group>"; };
+		602D33E628A4D8BB00A2A08E /* MovimientosResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovimientosResponse.swift; sourceTree = "<group>"; };
+		602D33E828A4DA4300A2A08E /* BankManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankManager.swift; sourceTree = "<group>"; };
+		6068988528A53D98002BDFDB /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
+		6068988728A54CB0002BDFDB /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		60D688D928A4752400C0E31D /* test-bankapp-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "test-bankapp-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		60D688DC28A4752400C0E31D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60D688DE28A4752400C0E31D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +64,8 @@
 		60E8A1EF28A4BD27006694B4 /* TarjetaCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TarjetaCell.xib; sourceTree = "<group>"; };
 		60E8A1F328A4BD43006694B4 /* MovimientosCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovimientosCell.swift; sourceTree = "<group>"; };
 		60E8A1F428A4BD43006694B4 /* MovimientosCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovimientosCell.xib; sourceTree = "<group>"; };
+		C7A02B3A771894F593A012E6 /* Pods-test-bankapp-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test-bankapp-ios.debug.xcconfig"; path = "Target Support Files/Pods-test-bankapp-ios/Pods-test-bankapp-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		F3A5406C19EEA01F82C41C37 /* Pods_test_bankapp_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_test_bankapp_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,17 +73,48 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5262A9E015FCEBDA085D55DD /* Pods_test_bankapp_ios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		21D28D5B062D1E5CCBBF4965 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C7A02B3A771894F593A012E6 /* Pods-test-bankapp-ios.debug.xcconfig */,
+				2918B6FB21648ED99900A94F /* Pods-test-bankapp-ios.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		5E3D854C5036735F30D225D5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F3A5406C19EEA01F82C41C37 /* Pods_test_bankapp_ios.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		602D33DF28A4D79A00A2A08E /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				602D33E028A4D89100A2A08E /* CuentaResponse.swift */,
+				602D33E228A4D8A000A2A08E /* SaldosResponse.swift */,
+				602D33E428A4D8AC00A2A08E /* TarjetasResponse.swift */,
+				602D33E628A4D8BB00A2A08E /* MovimientosResponse.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
 		60D688D028A4752300C0E31D = {
 			isa = PBXGroup;
 			children = (
 				60D688DB28A4752400C0E31D /* test-bankapp-ios */,
 				60D688DA28A4752400C0E31D /* Products */,
+				21D28D5B062D1E5CCBBF4965 /* Pods */,
+				5E3D854C5036735F30D225D5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +156,10 @@
 		60D688F728A47B6900C0E31D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				602D33DF28A4D79A00A2A08E /* Response */,
+				602D33E828A4DA4300A2A08E /* BankManager.swift */,
+				60170A9028A4E36F000535DA /* Manager.swift */,
+				6068988528A53D98002BDFDB /* Endpoints.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -134,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				60D688FF28A47CF100C0E31D /* Extension+UIView.swift */,
+				6068988728A54CB0002BDFDB /* Double+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -163,9 +219,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 60D688ED28A4752600C0E31D /* Build configuration list for PBXNativeTarget "test-bankapp-ios" */;
 			buildPhases = (
+				0F134681CD079A1762761CFD /* [CP] Check Pods Manifest.lock */,
 				60D688D528A4752400C0E31D /* Sources */,
 				60D688D628A4752400C0E31D /* Frameworks */,
 				60D688D728A4752400C0E31D /* Resources */,
+				D2DF70F3E3A692B1C8410E69 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -228,17 +286,67 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0F134681CD079A1762761CFD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-test-bankapp-ios-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D2DF70F3E3A692B1C8410E69 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-test-bankapp-ios/Pods-test-bankapp-ios-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-test-bankapp-ios/Pods-test-bankapp-ios-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-test-bankapp-ios/Pods-test-bankapp-ios-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		60D688D528A4752400C0E31D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				602D33E328A4D8A000A2A08E /* SaldosResponse.swift in Sources */,
 				60D688FD28A47BF200C0E31D /* TarjetasViewController.swift in Sources */,
 				60D688DD28A4752400C0E31D /* AppDelegate.swift in Sources */,
 				60E8A1F528A4BD43006694B4 /* MovimientosCell.swift in Sources */,
+				6068988828A54CB0002BDFDB /* Double+Extension.swift in Sources */,
+				6068988628A53D98002BDFDB /* Endpoints.swift in Sources */,
+				602D33E928A4DA4300A2A08E /* BankManager.swift in Sources */,
 				60E8A1F028A4BD27006694B4 /* TarjetaCell.swift in Sources */,
 				60D6890028A47CF100C0E31D /* Extension+UIView.swift in Sources */,
+				602D33E128A4D89100A2A08E /* CuentaResponse.swift in Sources */,
 				60D688DF28A4752400C0E31D /* SceneDelegate.swift in Sources */,
+				602D33E528A4D8AC00A2A08E /* TarjetasResponse.swift in Sources */,
+				602D33E728A4D8BB00A2A08E /* MovimientosResponse.swift in Sources */,
+				60170A9128A4E36F000535DA /* Manager.swift in Sources */,
 				60D6895D28A492DD00C0E31D /* CustomCell.swift in Sources */,
 				60D688FB28A47BD100C0E31D /* AsociarTarjetaViewController.swift in Sources */,
 			);
@@ -382,6 +490,7 @@
 		};
 		60D688EE28A4752600C0E31D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C7A02B3A771894F593A012E6 /* Pods-test-bankapp-ios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -412,6 +521,7 @@
 		};
 		60D688EF28A4752600C0E31D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2918B6FB21648ED99900A94F /* Pods-test-bankapp-ios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

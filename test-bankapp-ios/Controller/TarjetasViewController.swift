@@ -15,18 +15,42 @@ class TarjetasViewController: UIViewController {
     @IBOutlet weak var tablaTarjetas: UITableView!
     @IBOutlet weak var tablaMovimientos: UITableView!
     
+    @IBOutlet weak var nombreUsuarioLabel: UILabel!
+    @IBOutlet weak var ultimoInicioLabel: UILabel!
+    
+    
     // MARK: - Variables
     let subrayadoButton: [NSAttributedString.Key: Any] = [.underlineStyle: NSUnderlineStyle.single.rawValue]
+    var saldos: [Saldos] = [Saldos(cuenta: 1, saldoGeneral: 100, ingresos: 500, gastos: 300, id: 1)]
+    var tarjetas: [Tarjetas] = []
+    var movimientos: [Movimientos] = []
+    
+    var bankManager = BankManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         delegados()
        
         configureUI()
+        
     }
     
+  
+    
     func delegados(){
+        bankManager.delegadoCuenta = self
+        bankManager.consultarInformacionCuenta(endPoint: Endpoints.urlCuenta)
+        
+        bankManager.delegadoSaldos = self
+        bankManager.consultarInformacionSaldos(endPoint: Endpoints.urlSaldos)
+        
+        bankManager.delegadoTarjetas = self
+        bankManager.consultarInformacionTarjetas(endPoint: Endpoints.urlTarjetas)
+        
+        bankManager.delegadoMovimientos = self
+        bankManager.consultarInformacionMovimientos(endPoint: Endpoints.urlMovimientos)
+        
         tablaTarjetas.delegate = self
         tablaTarjetas.dataSource = self
         
@@ -63,13 +87,52 @@ class TarjetasViewController: UIViewController {
 
 }
 
+extension TarjetasViewController: movimientosProtocol {
+    func mostrarDatos(movimientos: [Movimientos]) {
+        self.movimientos = movimientos
+        DispatchQueue.main.async {
+            self.tablaMovimientos.reloadData()
+        }
+    }
+}
+
+extension TarjetasViewController: tarjetasProtocol {
+    func mostrarDatos(tarjetas: [Tarjetas]) {
+        self.tarjetas = tarjetas
+        DispatchQueue.main.async {
+            self.tablaTarjetas.reloadData()
+        }
+    }
+}
+
+extension TarjetasViewController: cuentaProtocol {
+    func mostrarDatos(cuenta: [Cuenta]) {
+        DispatchQueue.main.async {
+            //Actualizar los labels
+            self.nombreUsuarioLabel.text = cuenta[0].nombre
+            self.ultimoInicioLabel.text = cuenta[0].ultimaSesion
+        }
+    }
+}
+
+extension TarjetasViewController: saldosProtocol {
+    func mostrarDatos(saldos: [Saldos]) {
+        self.saldos = saldos
+        DispatchQueue.main.async {
+            self.saldosCollectionView.reloadData()
+        }
+    }
+    
+    
+}
+
 extension TarjetasViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch tableView {
         case tablaTarjetas:
-            return 2
+            return tarjetas.count
         case tablaMovimientos:
-            return 10
+            return movimientos.count
         default:
             return 1
         }
@@ -79,19 +142,27 @@ extension TarjetasViewController: UITableViewDelegate, UITableViewDataSource {
         switch tableView{
         case tablaTarjetas:
             let celda = tablaTarjetas.dequeueReusableCell(withIdentifier: "tarjeta", for: indexPath) as! TarjetaCell
-            celda.tarjetaImageView.image = UIImage(named: "activa-card")
-            celda.activaInactivaLabel.text = "Activa"
-            celda.cantidadDineroLabel.text = "$1,500.00"
-            celda.numTarjetaLabel.text = "4152 3137 0987 0987"
-            celda.nombreTitularTarjetaLabel.text = "Marco Alonso Rodriguez"
-            celda.TitularLabel.text = "Titular"
+            
+            if tarjetas[indexPath.row].estado == "activa" {
+                celda.tarjetaImageView.image =  UIImage(named: "activa-card")
+            } else {
+                celda.tarjetaImageView.image =  UIImage(named: "inactiva-card")
+            }
+            
+            celda.activaInactivaLabel.text = tarjetas[indexPath.row].estado?.localizedCapitalized
+            
+            let saldoFormato = tarjetas[indexPath.row].saldo ?? 0.0
+            celda.cantidadDineroLabel.text = "$ \(saldoFormato.withCommas())"
+            celda.numTarjetaLabel.text = tarjetas[indexPath.row].tarjeta
+            celda.nombreTitularTarjetaLabel.text = tarjetas[indexPath.row].nombre
+            celda.TitularLabel.text = tarjetas[indexPath.row].tipo?.localizedCapitalized
             return celda
             
         case tablaMovimientos:
             let celda = tablaMovimientos.dequeueReusableCell(withIdentifier: "movimientos", for: indexPath) as! MovimientosCell
-            celda.descripcionMovimientoLabel.text = "UBER BV"
-            celda.fechaMovimientoLabel.text = "10/08/2022"
-            celda.cantidadMovimientoLabel.text = "- $250.00"
+            celda.descripcionMovimientoLabel.text = movimientos[indexPath.row].descripcion
+            celda.fechaMovimientoLabel.text = movimientos[indexPath.row].fecha
+            celda.cantidadMovimientoLabel.text = movimientos[indexPath.row].monto
             return celda
             
             
@@ -124,14 +195,29 @@ extension TarjetasViewController: UICollectionViewDelegate, UICollectionViewDele
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        switch collectionView {
-        case saldosCollectionView:
+        
             let celda = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomCell", for: indexPath) as! CustomCell
+        print("IndexPath: \(indexPath)")
+        
+        switch indexPath.row {
+            case 0:
+            //    let saldoFormato = String(format: "%d", locale: Locale.current, saldos[0].saldoGeneral ?? 0)
+            let saldoGeneral = saldos[0].saldoGeneral ?? 0
+            celda.cantidadSaldoLabel.text = " $ \(saldoGeneral.withCommas())"
+                celda.saldoIngresosLabel.text = "Saldo general en cuentas"
+                return celda
+            case 1:
+            let ingreso = saldos[0].ingresos ?? 0
+            celda.cantidadSaldoLabel.text = " $ \(ingreso.withCommas())"
+                celda.saldoIngresosLabel.text = "Total de ingresos"
+                return celda
+            default:
+                celda.cantidadSaldoLabel.text = " $ \(saldos[0].saldoGeneral ?? 0)"
+                celda.saldoIngresosLabel.text = "Saldo general en cuentas"
+                return celda
+            }
             
-            return celda
-        default:
-            return UICollectionViewCell()
-        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -145,3 +231,5 @@ extension TarjetasViewController: UICollectionViewDelegate, UICollectionViewDele
     }
     
 }
+
+

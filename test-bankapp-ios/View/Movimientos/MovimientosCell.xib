@@ -26,9 +26,9 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UBER BV" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ggc-sT-det">
-                        <rect key="frame" x="26" y="11" width="75" height="14"/>
+                        <rect key="frame" x="26" y="11" width="210" height="14"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="75" id="iFE-Ze-DzD"/>
+                            <constraint firstAttribute="width" constant="210" id="iFE-Ze-DzD"/>
                             <constraint firstAttribute="height" constant="14" id="p5b-tS-dg2"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="12"/>
@@ -42,7 +42,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- $250.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vdu-vU-Jfr">
-                        <rect key="frame" x="230" y="11" width="56" height="14"/>
+                        <rect key="frame" x="250" y="11" width="56" height="14"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="56" id="QF5-8h-7bH"/>
                             <constraint firstAttribute="height" constant="14" id="SKI-N9-10Z"/>
@@ -55,7 +55,7 @@
                 <constraints>
                     <constraint firstItem="Ggc-sT-det" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="26" id="Ajn-Vu-qSa"/>
                     <constraint firstItem="r1c-eN-lNy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="26" id="BFg-oq-ztU"/>
-                    <constraint firstAttribute="trailing" secondItem="Vdu-vU-Jfr" secondAttribute="trailing" constant="34" id="NSa-iU-KBj"/>
+                    <constraint firstAttribute="trailing" secondItem="Vdu-vU-Jfr" secondAttribute="trailing" constant="14" id="NSa-iU-KBj"/>
                     <constraint firstItem="r1c-eN-lNy" firstAttribute="top" secondItem="Ggc-sT-det" secondAttribute="bottom" constant="5" id="Pnw-zR-LCI"/>
                     <constraint firstItem="Vdu-vU-Jfr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="VJ3-eu-2LR"/>
                     <constraint firstItem="Ggc-sT-det" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="w4h-Ec-rCr"/>
